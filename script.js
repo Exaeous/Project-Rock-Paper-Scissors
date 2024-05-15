@@ -2,13 +2,16 @@
 
 const choices = ["ROCK", "PAPER", "SCISSORS"];
 
-const randomChoices = Math.floor(Math.random() * choices.length);
+let randomChoices = Math.floor(Math.random() * choices.length);
 
-const computerChoice = choices[randomChoices];
+let computerChoice = choices[randomChoices];
 
 let humanChoice = prompt("Select your choice");
 
 humanChoice = humanChoice.toUpperCase();
+
+let computerScore = 0;
+let humanScore = 0;
 
 function getComputerChoice() {
   return computerChoice;
