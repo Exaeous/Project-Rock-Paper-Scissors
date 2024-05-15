@@ -4,23 +4,54 @@ const choices = ["ROCK", "PAPER", "SCISSORS"];
 
 let randomChoices = Math.floor(Math.random() * choices.length);
 
-let computerChoice = choices[randomChoices];
+let computersChoice = choices[randomChoices];
 
-let humanChoice = prompt("Select your choice");
+let humansChoice = prompt("Select your choice");
 
-humanChoice = humanChoice.toUpperCase();
+humansChoice = humansChoice.toUpperCase();
 
 let computerScore = 0;
 let humanScore = 0;
 
 function getComputerChoice() {
-  return computerChoice;
+  return computersChoice;
 }
 
-console.log(getComputerChoice());
-
-function getHumanhoice() {
-  return humanChoice;
+function getHumanChoice() {
+  return humansChoice;
 }
 
-console.log(getHumanhoice());
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === "ROCK" && computerChoice === "SCISSORS") {
+    console.log("You won! Rock beats Scissors");
+    humanScore++;
+  } else if (humanChoice === "PAPER" && computerChoice === "ROCK") {
+    console.log("You won! Paper beats Rock");
+    humanScore++;
+  } else if (humanChoice === "SCISSORS" && computerChoice === "PAPER") {
+    console.log("You won! Scissors beats Paper");
+    humanScore++;
+  } else if (humanChoice === "ROCK" && computerChoice === "PAPER") {
+    console.log("You lose! Paper beats Rock");
+    computerScore++;
+  } else if (humanChoice === "PAPER" && computerChoice === "SCISSORS") {
+    console.log("You lose! Scissors beats Paper");
+    computerScore++;
+  } else if (humanChoice === "SCISSORS" && computerChoice === "ROCK") {
+    console.log("You lose! Rock beats Scissors");
+    computerScore++;
+  } else {
+    console.log("It's a draw!");
+  }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(`Human selection is ${humanSelection}`);
+console.log(`Computer selection is ${computerSelection}`);
+
+playRound(humanSelection, computerSelection);
+
+console.log(humanScore);
+console.log(computerScore);
