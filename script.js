@@ -1,5 +1,10 @@
 "use strict";
 
+function getHumanChoice() {
+  let humanChoice = prompt("Enter your choice:");
+  console.log(humanChoice);
+}
+
 function getComputerChoice() {
   let randomChoice = Math.random();
   let computerChoice = "";
@@ -13,4 +18,5 @@ function getComputerChoice() {
   console.log(computerChoice);
 }
 
+getHumanChoice();
 getComputerChoice();
