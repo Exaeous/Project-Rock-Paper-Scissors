@@ -1,5 +1,8 @@
 "use strict";
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getHumanChoice() {
   let humanChoice = prompt("Enter your choice:");
   console.log(humanChoice);
