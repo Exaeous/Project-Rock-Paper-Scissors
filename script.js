@@ -10,7 +10,8 @@ const scissorsButton = document.querySelector(".scissors-btn");
 const showHumanScore = document.querySelector(".human-score");
 const showComputerScore = document.querySelector(".computer-score");
 
-const showResult = document.querySelector(".result");
+const showCurrentResult = document.querySelector(".current-result");
+const showFinalResult = document.querySelector(".final-result");
 
 rockButton.addEventListener("click", () =>
   playRound("Rock", getComputerChoice()),
@@ -60,7 +61,7 @@ function playRound(humanChoice, computerChoice) {
   }
   showHumanScore.textContent = humanScore;
   showComputerScore.textContent = computerScore;
-  showResult.textContent = finalMessage;
+  showCurrentResult.textContent = finalMessage;
   declareWinner();
 }
 
@@ -72,10 +73,10 @@ function disableButtons() {
 
 function declareWinner() {
   if (humanScore === 5 && computerScore < 5) {
-    showResult.textContent = "You won! Game over";
+    showFinalResult.textContent = "You won! Game over";
     disableButtons();
   } else if (humanScore < 5 && computerScore === 5) {
-    showResult.textContent = "Computer won! Game over";
+    showFinalResult.textContent = "Computer won! Game over";
     disableButtons();
   }
 }
