@@ -7,6 +7,8 @@ const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorsButton = document.querySelector(".scissors-btn");
 
+const showResult = document.querySelector(".result");
+
 rockButton.addEventListener("click", () =>
   playRound("Rock", getComputerChoice()),
 );
@@ -55,5 +57,5 @@ function playRound(humanChoice, computerChoice) {
   }
   console.log(humanScore);
   console.log(computerScore);
-  console.log(finalMessage);
+  showResult.textContent = finalMessage;
 }
