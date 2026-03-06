@@ -7,6 +7,9 @@ const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorsButton = document.querySelector(".scissors-btn");
 
+const showHumanScore = document.querySelector(".human-score");
+const showComputerScore = document.querySelector(".computer-score");
+
 const showResult = document.querySelector(".result");
 
 rockButton.addEventListener("click", () =>
@@ -55,7 +58,7 @@ function playRound(humanChoice, computerChoice) {
   } else {
     finalMessage = "It's a draw";
   }
-  console.log(humanScore);
-  console.log(computerScore);
+  showHumanScore.textContent = humanScore;
+  showComputerScore.textContent = computerScore;
   showResult.textContent = finalMessage;
 }
