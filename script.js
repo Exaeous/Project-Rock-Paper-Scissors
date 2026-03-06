@@ -3,6 +3,10 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const rockButton = document.querySelector(".rock-btn");
+const paperButton = document.querySelector(".paper-btn");
+const scissorsButton = document.querySelector(".scissors-btn");
+
 function getHumanChoice() {
   let humanChoice = prompt("Enter your choice:");
   return humanChoice;
