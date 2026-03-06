@@ -61,4 +61,21 @@ function playRound(humanChoice, computerChoice) {
   showHumanScore.textContent = humanScore;
   showComputerScore.textContent = computerScore;
   showResult.textContent = finalMessage;
+  declareWinner();
+}
+
+function disableButtons() {
+  rockButton.disabled = true;
+  paperButton.disabled = true;
+  scissorsButton.disabled = true;
+}
+
+function declareWinner() {
+  if (humanScore === 5 && computerScore < 5) {
+    showResult.textContent = "You won! Game over";
+    disableButtons();
+  } else if (humanScore < 5 && computerScore === 5) {
+    showResult.textContent = "Computer won! Game over";
+    disableButtons();
+  }
 }
