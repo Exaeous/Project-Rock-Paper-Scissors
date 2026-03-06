@@ -3,12 +3,14 @@
 let humanScore = 0;
 let computerScore = 0;
 
+const showHumanScore = document.querySelector(".human-score");
+const showComputerScore = document.querySelector(".computer-score");
+
 const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorsButton = document.querySelector(".scissors-btn");
 
-const showHumanScore = document.querySelector(".human-score");
-const showComputerScore = document.querySelector(".computer-score");
+const resetButton = document.querySelector(".reset-btn");
 
 const showCurrentResult = document.querySelector(".current-result");
 const showFinalResult = document.querySelector(".final-result");
@@ -22,6 +24,8 @@ paperButton.addEventListener("click", () =>
 scissorsButton.addEventListener("click", () =>
   playRound("Scissors", getComputerChoice()),
 );
+
+resetButton.addEventListener("click", () => resetGame());
 
 function getComputerChoice() {
   let randomChoice = Math.random();
@@ -65,12 +69,6 @@ function playRound(humanChoice, computerChoice) {
   declareWinner();
 }
 
-function disableButtons() {
-  rockButton.disabled = true;
-  paperButton.disabled = true;
-  scissorsButton.disabled = true;
-}
-
 function declareWinner() {
   if (humanScore === 5 && computerScore < 5) {
     showFinalResult.textContent = "You won! Game over";
@@ -79,4 +77,14 @@ function declareWinner() {
     showFinalResult.textContent = "Computer won! Game over";
     disableButtons();
   }
+}
+
+function disableButtons() {
+  rockButton.disabled = true;
+  paperButton.disabled = true;
+  scissorsButton.disabled = true;
+}
+
+function resetGame() {
+  window.location.reload();
 }
