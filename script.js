@@ -7,10 +7,15 @@ const rockButton = document.querySelector(".rock-btn");
 const paperButton = document.querySelector(".paper-btn");
 const scissorsButton = document.querySelector(".scissors-btn");
 
-function getHumanChoice() {
-  let humanChoice = prompt("Enter your choice:");
-  return humanChoice;
-}
+rockButton.addEventListener("click", () =>
+  playRound("Rock", getComputerChoice()),
+);
+paperButton.addEventListener("click", () =>
+  playRound("Paper", getComputerChoice()),
+);
+scissorsButton.addEventListener("click", () =>
+  playRound("Scissors", getComputerChoice()),
+);
 
 function getComputerChoice() {
   let randomChoice = Math.random();
@@ -48,10 +53,5 @@ function playRound(humanChoice, computerChoice) {
   } else {
     finalMessage = "It's a draw";
   }
-  return finalMessage;
+  console.log(finalMessage);
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-playRound(humanSelection, computerSelection);
