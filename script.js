@@ -39,22 +39,22 @@ function playRound(humanChoice, computerChoice) {
   let finalMessage = " ";
   if (humanChoice === "Rock" && computerChoice === "Paper") {
     computerScore++;
-    finalMessage = "You lose! Paper beats Rock";
+    finalMessage = `You chose Rock and Computer chose ${computerChoice}, You lose! Paper beats Rock`;
   } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
     computerScore++;
-    finalMessage = "You lose! Scissors beats Paper";
+    finalMessage = `You chose Paper and Computer chose ${computerChoice}, You lose! Scissors beats Paper`;
   } else if (humanChoice === "Scissors " && computerChoice === "Rock") {
     computerScore++;
-    finalMessage = "You lose! Rock beats Scissors";
+    finalMessage = `You chose Scissors and Computer chose ${computerChoice}, You lose! Rock beats Scissors`;
   } else if (computerChoice === "Rock" && humanChoice === "Paper") {
     humanScore++;
-    finalMessage = "You win! Paper beats Rock";
+    finalMessage = `You chose Paper and Computer chose ${computerChoice}, You win! Paper beats Rock`;
   } else if (computerChoice === "Paper" && humanChoice === "Scissors") {
     humanScore++;
-    finalMessage = "You win! Scissors beats Paper";
+    finalMessage = `You chose Scissors and Computer chose ${computerChoice}, You win! Scissors beats Paper`;
   } else if (computerChoice === "Scissors" && humanChoice === "Rock") {
     humanScore++;
-    finalMessage = "You win! Rock beats Scissors";
+    finalMessage = `You chose Rock and Computer chose ${computerChoice}, You win! Rock beats Scissors`;
   } else {
     finalMessage = "It's a draw";
   }
